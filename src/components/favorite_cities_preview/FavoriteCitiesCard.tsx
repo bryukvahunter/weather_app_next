@@ -1,8 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function FavoriteCitiesCard({ city }) {
   return (
-    <div className="flex w-[200px] flex-col items-center rounded-xl bg-white/10 px-6 py-4 text-center text-white backdrop-blur-sm">
+    <Link
+      href={"/"}
+      className="flex w-[200px] flex-col items-center rounded-xl bg-white/10 px-6 py-4 text-center text-white backdrop-blur-sm"
+    >
       <h2 className="mb-2 text-lg font-medium">{city.name}</h2>
       <Image
         src="/sunny_icon.png"
@@ -16,6 +20,6 @@ export default function FavoriteCitiesCard({ city }) {
         <span>{city.feels_like}</span>
       </div>
       <div className="text-sm opacity-80">{city.visibility}</div>
-    </div>
+    </Link>
   );
 }

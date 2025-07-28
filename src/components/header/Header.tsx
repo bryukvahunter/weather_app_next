@@ -3,6 +3,7 @@ import Logo from "./header_components/Logo";
 import Search from "./header_components/Search";
 import NowDate from "./header_components/NowDate";
 import ThemeChanger from "./header_components/ThemeChanger";
+import FavoriteButton from "./header_components/FavoriteButton";
 
 export default function Header() {
   return (
@@ -11,6 +12,7 @@ export default function Header() {
       <Search />
       <NowDate />
       <ThemeChanger />
+      <FavoriteButton />
     </header>
   );
 }

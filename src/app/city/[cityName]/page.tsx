@@ -1,12 +1,13 @@
-import Image from "next/image";
-import Link from "next/link";
+import { getCurrentWeather } from "@/api/request";
 
-export default function RandomCityWeather({ city }) {
+import Image from "next/image";
+
+export default async function CityPage({ params }) {
+  const name = await params;
+  const city = await getCurrentWeather(name.cityName);
+
   return (
-    <Link
-      href={`/city/${city.name}`}
-      className="flex h-[200px] w-full max-w-5xl items-center justify-around rounded-2xl bg-gradient-to-r from-[#4A90E2] to-[#A266DD] p-8 font-sans text-white shadow-md"
-    >
+    <div className="flex h-[200px] w-full max-w-5xl items-center justify-around rounded-2xl bg-gradient-to-r from-[#4A90E2] to-[#A266DD] p-8 font-sans text-white shadow-md">
       <div className="flex flex-col gap-4">
         <div>
           <h1 className="text-2xl font-semibold">{city.name}</h1>
@@ -42,6 +43,6 @@ export default function RandomCityWeather({ city }) {
           className="object-contain"
         />
       </div>
-    </Link>
+    </div>
   );
 }

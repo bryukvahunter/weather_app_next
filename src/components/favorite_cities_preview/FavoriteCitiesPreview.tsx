@@ -48,7 +48,7 @@ export default function FavoriteCitiesPreview() {
     <section className="w-full max-w-6xl rounded-2xl bg-gradient-to-r from-[#4A90E2] to-[#A266DD] px-10 py-8 shadow-lg">
       <div className="flex justify-between gap-4">
         {favoriteCities.map((city) => {
-          return <FavoriteCitiesCard city={city} />;
+          return <FavoriteCitiesCard key={city.name} city={city} />;
         })}
       </div>
     </section>

@@ -1,6 +1,4 @@
-"use client";
-
-import RandomCityWeather from "../random_city_weather/RandomCityWeather";
+import CityCard from "../CityCard/CityCard";
 
 const mockArr = [
   {
@@ -49,7 +47,7 @@ export default function FavoriteList() {
   return (
     <div className="flex flex-col items-center gap-5 p-3">
       {mockArr.map((city) => {
-        return <RandomCityWeather key={city.cord} info={city} />;
+        return <CityCard key={city.cord} info={city} />;
       })}
     </div>
   );
