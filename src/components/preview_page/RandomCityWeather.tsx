@@ -1,11 +1,18 @@
+import { CurrentWeatherData } from "@/shared/types/weatherData.types";
+
 import Image from "next/image";
 import Link from "next/link";
+import FavoriteButton from "../common/FavoriteButton";
 
-export default function RandomCityWeather({ city }) {
+interface Props {
+  city: CurrentWeatherData;
+}
+
+export default function RandomCityWeather({ city }: Props) {
   return (
     <Link
       href={`/city/${city.name}`}
-      className="flex h-[200px] w-full max-w-5xl items-center justify-around rounded-2xl bg-gradient-to-r from-[#4A90E2] to-[#A266DD] p-8 font-sans text-white shadow-md"
+      className="relative flex h-[200px] w-full max-w-5xl items-center justify-around rounded-2xl bg-gradient-to-r from-[#4A90E2] to-[#A266DD] p-8 font-sans text-white shadow-md"
     >
       <div className="flex flex-col gap-4">
         <div>
@@ -42,6 +49,8 @@ export default function RandomCityWeather({ city }) {
           className="object-contain"
         />
       </div>
+
+      <FavoriteButton cityName={city.name} />
     </Link>
   );
 }

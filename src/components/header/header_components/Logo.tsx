@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Logo() {
   return (
-    <div className="flex items-center">
+    <Link href={"/"} className="flex items-center">
       <Image
         src="/weather_logo.svg"
         alt="weather_logo"
@@ -10,6 +11,6 @@ export default function Logo() {
         height={50}
         priority
       />
-    </div>
+    </Link>
   );
 }

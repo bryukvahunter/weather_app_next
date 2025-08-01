@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/header/Header";
 
 const poppinsSans = Poppins({
   variable: "--font-poppins-sans",
@@ -23,7 +24,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppinsSans.variable} antialiased`}>{children}</body>
+      <body
+        className={`${poppinsSans.variable} flex min-h-screen w-full flex-col items-center justify-between gap-8 p-3 pb-10 font-sans antialiased`}
+      >
+        <Header />
+        {children}
+        <footer className="row-start-3 flex flex-wrap items-center justify-center gap-[24px]">
+          © 2025 @NE_UNIVAEM. All rights reserved.
+        </footer>
+      </body>
     </html>
   );
 }
