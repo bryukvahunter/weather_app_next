@@ -1,29 +1,23 @@
 "use client";
 
 import { useFavoriteStore } from "@/store/useFavorites";
-import CityCard from "../city_card/CityCard";
-import { getCurrentWeather } from "@/services/api/requests";
-import { useEffect, useState } from "react";
+import PreviewCard from "../cards/PreviewCard";
+import Link from "next/link";
 
 export default function FavoriteList() {
   const favorites = useFavoriteStore((state) => state.favorites);
-  const [weatherData, setWeatherData] = useState([]);
-
-  async function getPromiseAll() {
-    const datas = await Promise.all(
-      favorites.map((city) => getCurrentWeather(city)),
-    );
-    setWeatherData(datas);
-  }
-
-  useEffect(() => {
-    getPromiseAll();
-  }, [favorites]);
+  const favoritesArr = Object.entries(favorites);
 
   return (
-    <div className="flex flex-col items-center gap-5 p-3">
-      {weatherData.map((city) => (
-        <CityCard key={city.name} city={city} />
+    <div className="flex w-full flex-col items-center gap-5 p-3">
+      {favoritesArr.map(([city, response]) => (
+        <Link
+          href={`/search/${city}`}
+          key={city}
+          className="flex w-full justify-center"
+        >
+          <PreviewCard city={response} />
+        </Link>
       ))}
     </div>
   );

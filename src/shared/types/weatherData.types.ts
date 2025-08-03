@@ -8,11 +8,14 @@ interface CoordData {
 }
 
 interface MainData {
-  temp: number;
   feels_like: number;
+  grnd_level: number;
+  humidity: number;
+  pressure: number;
+  sea_level: number;
+  temp: number;
   temp_min: number;
   temp_max: number;
-  pressure: number;
 }
 
 interface SysData {
@@ -49,4 +52,54 @@ export interface CurrentWeatherData {
   visibility: number;
   weather: WeatherData[];
   wind: WindData;
+}
+
+interface CityData {
+  coord: CoordData;
+  country: string;
+  id: number;
+  name: string;
+  population: number;
+  timezone: number;
+}
+
+interface DailyFeelsLike {
+  day: number;
+  night: number;
+  eve: number;
+  morn: number;
+}
+
+interface DailyTemp {
+  day: number;
+  eve: number;
+  max: number;
+  min: number;
+  morn: number;
+  night: number;
+}
+
+export interface DailyWeatherData {
+  clouds: number;
+  deg: number;
+  dt: number;
+  feels_like: DailyFeelsLike;
+  gust: number;
+  humidity: number;
+  pop: number;
+  pressure: number;
+  rain: number;
+  speed: number;
+  sunrise: number;
+  sunset: number;
+  temp: DailyTemp;
+  weather: WeatherData[];
+}
+
+export interface ForecastWeatherData {
+  city: CityData;
+  cnt: number;
+  cod: string;
+  list: DailyWeatherData[];
+  message: number;
 }

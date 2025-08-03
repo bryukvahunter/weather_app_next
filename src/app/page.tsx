@@ -1,16 +1,23 @@
-import { getCurrentWeather } from "@/services/api/requests";
-import FavoriteCitiesPreview from "@/components/preview_page/favorite_cities_preview/FavoriteCitiesPreview";
-import RandomCityWeather from "@/components/preview_page/RandomCityWeather";
-import { getRandomCity } from "@/utils/randomCityGenerate";
+import { getWeather } from "@/services/api/requests";
+import FavoriteCitiesPreview from "@/components/favorites_preview/FavoriteCitiesPreview";
 import { randomCities } from "@/shared/data/randomCities.data";
+import PreviewCard from "@/components/cards/PreviewCard";
+import Link from "next/link";
+import { ENDPOINTS } from "@/services/api/constants";
+import { getRandomCity } from "@/utils/helpers";
 
 export default async function Home() {
-  const city = await getCurrentWeather(getRandomCity(randomCities));
+  const city = await getWeather(getRandomCity(randomCities), ENDPOINTS.CURRENT);
 
   return (
-    <div>
-      <main className="flex w-full max-w-6xl flex-col items-center gap-[32px]">
-        <RandomCityWeather city={city} />
+    <div className="w-full px-4">
+      <main className="mx-auto flex max-w-6xl flex-col items-center gap-8 py-5">
+        <Link
+          href={`/search/${city.name}`}
+          className="flex w-full items-center justify-center"
+        >
+          <PreviewCard city={city} />
+        </Link>
         <FavoriteCitiesPreview />
       </main>
     </div>

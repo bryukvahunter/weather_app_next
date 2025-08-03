@@ -16,5 +16,5 @@ export const weatherIcons: Record<string, string> = {
   "13d": "/weather_icons/snow.png",
   "13n": "/weather_icons/snow.png",
   "50d": "/weather_icons/mist_sun.png",
-  "50n": "/weather_icons/",
+  "50n": "/weather_icons/mist_moon.png",
 };

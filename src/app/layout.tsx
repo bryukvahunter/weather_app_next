@@ -25,11 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppinsSans.variable} flex min-h-screen w-full flex-col items-center justify-between gap-8 p-3 pb-10 font-sans antialiased`}
+        className={`${poppinsSans.variable} flex min-h-screen w-full flex-col items-center justify-between gap-3 p-3 pb-3 font-sans antialiased`}
       >
         <Header />
         {children}
-        <footer className="row-start-3 flex flex-wrap items-center justify-center gap-[24px]">
+        <footer className="text-white/50">
           © 2025 @NE_UNIVAEM. All rights reserved.
         </footer>
       </body>

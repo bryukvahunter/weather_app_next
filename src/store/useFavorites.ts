@@ -35,10 +35,8 @@ export const useFavoriteStore = create<FavoriteStore>((set, get) => ({
 
   toggle: (cityName, response) => {
     if (get().isFavorite(cityName)) {
-      console.log("aaa");
       get().remove(cityName);
     } else {
-      console.log("bbb");
       get().add(cityName, response);
     }
   },

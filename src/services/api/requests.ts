@@ -1,6 +1,4 @@
 import { instance } from "./instance";
-import { ENDPOINTS } from "./constants";
-import { CurrentWeatherData } from "@/shared/types/weatherData.types";
 import axios from "axios";
 
 const errorMessages: Record<string, string> = {
@@ -18,15 +16,17 @@ interface ErrorData {
 }
 
 const unknownStatusCode = 0;
+const days = 5;
 
-export async function getCurrentWeather(cityName: CurrentWeatherData["name"]) {
+export async function getWeather(cityName: string, endpoint: string) {
   try {
-    const response = await instance(ENDPOINTS.CURRENT, {
+    const response = await instance(endpoint, {
       params: {
-        lang: "en",
+        lang: "ru",
         q: cityName,
         appid: process.env.NEXT_PUBLIC_OPENWEATHER_KEY,
         units: "metric",
+        cnt: days,
       },
     });
     return response.data;
@@ -48,21 +48,5 @@ export async function getCurrentWeather(cityName: CurrentWeatherData["name"]) {
       return errorData;
     }
     throw Error;
-  }
-}
-
-export async function getForecastWeather(cityName: CurrentWeatherData["name"]) {
-  try {
-    const response = await instance(ENDPOINTS.FORECAST, {
-      params: {
-        lang: "en",
-        q: cityName,
-        appid: process.env.NEXT_PUBLIC_OPENWEATHER_KEY,
-        units: "metric",
-      },
-    });
-    return response;
-  } catch (error) {
-    console.error(error);
   }
 }

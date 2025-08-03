@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function FavoriteButton() {
   return (
     <Link href={"/favorites"}>
-      <Image src="/globe.svg" alt="favorites" width={20} height={20} />
+      <Image src="/favorites.svg" alt="favorites" width={40} height={40} />
     </Link>
   );
 }

@@ -10,7 +10,7 @@ interface Props {
 export default function FavoriteButton({ city }: Props) {
   const toggle = useFavoriteStore((state) => state.toggle);
   const favorites = useFavoriteStore((state) => state.favorites);
-  console.log(favorites);
+
   const isFavorite = city.name in favorites;
 
   function onToggle(e: React.MouseEvent) {
@@ -27,7 +27,7 @@ export default function FavoriteButton({ city }: Props) {
       onClick={onToggle}
     >
       <Image
-        src={isFavorite ? "/heart-like-solid.svg" : "/heart-like.svg"}
+        src={isFavorite ? "/like_solid.svg" : "/like.svg"}
         alt="like"
         width={30}
         height={30}
