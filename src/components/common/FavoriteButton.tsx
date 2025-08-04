@@ -16,6 +16,7 @@ export default function FavoriteButton({ city }: Props) {
   function onToggle(e: React.MouseEvent) {
     e.preventDefault();
     e.stopPropagation();
+    localStorage.setItem("cities", JSON.stringify(favorites));
 
     toggle(city.name, city);
   }

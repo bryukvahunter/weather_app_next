@@ -36,7 +36,7 @@ export default function FullCard({ currentData, forecastData }: Props) {
   );
 
   return (
-    <div className="relative flex w-full max-w-5xl flex-col rounded-3xl bg-gradient-to-r from-[#4A90E2] to-[#A266DD] p-8 text-white shadow-lg">
+    <div className="relative flex w-full max-w-5xl flex-col rounded-3xl bg-gradient-to-r from-[#4A90E2] to-[#A266DD] p-8 text-white shadow-lg dark:from-[#160524] dark:to-[#002e78]">
       <div className="flex w-full flex-col items-center justify-around gap-8 md:flex-row md:items-center">
         <div className="flex flex-col gap-6">
           <div>

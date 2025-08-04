@@ -11,7 +11,7 @@ export default async function Home() {
 
   return (
     <div className="w-full px-4">
-      <main className="mx-auto flex max-w-6xl flex-col items-center gap-8 py-5">
+      <main className="mx-auto flex max-w-6xl flex-col items-center gap-8 py-3">
         <Link
           href={`/search/${city.name}`}
           className="flex w-full items-center justify-center"

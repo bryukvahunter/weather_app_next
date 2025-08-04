@@ -13,7 +13,7 @@ export default function PreviewCard({ city }: Props) {
   const icon = weatherIcons[weather[0].icon];
 
   return (
-    <div className="relative flex h-[200px] w-full items-center justify-around rounded-2xl bg-gradient-to-r from-[#4A90E2] to-[#A266DD] p-8 font-sans text-white shadow-md md:max-w-5xl">
+    <div className="dark:to-[#002e78]p-8 relative flex h-[200px] w-full items-center justify-around rounded-2xl bg-gradient-to-r from-[#4A90E2] to-[#A266DD] font-sans text-white shadow-md md:max-w-5xl dark:from-[#160524]">
       <div className="flex flex-col gap-4">
         <div>
           <h1 className="text-[50px] leading-[1] font-medium">{name}</h1>

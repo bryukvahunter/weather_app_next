@@ -13,7 +13,7 @@ export default function FavoriteCitiesPreview() {
   }
 
   return (
-    <section className="w-full rounded-2xl bg-gradient-to-r from-[#4A90E2] to-[#A266DD] px-6 py-8 shadow-lg md:max-w-6xl">
+    <section className="w-full rounded-2xl bg-gradient-to-r from-[#4A90E2] to-[#A266DD] px-3 py-8 shadow-lg md:max-w-6xl dark:from-[#160524] dark:to-[#002e78]">
       <div className="flex justify-center gap-4">
         {favoritesArr.slice(0, 5).map(([city, response]) => (
           <Link key={city} href={`/search/${city}`}>
