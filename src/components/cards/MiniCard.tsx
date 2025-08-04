@@ -19,7 +19,7 @@ export default function MiniCard({
   description,
 }: Props) {
   return (
-    <div className="flex h-[235px] w-[200px] flex-col items-center rounded-xl bg-white/10 px-6 py-4 text-center text-white backdrop-blur-sm">
+    <div className="flex h-auto w-full flex-col items-center rounded-xl bg-white/10 px-6 py-4 text-center text-white backdrop-blur-sm md:h-[235px] md:w-[200px]">
       <h2 className="mb-2 text-lg font-medium capitalize">{title}</h2>
 
       <Image

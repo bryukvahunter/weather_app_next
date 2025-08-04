@@ -11,10 +11,10 @@ const poppinsSans = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "weather app",
+  title: "wthr",
   description: "check your weather",
   icons: {
-    icon: "/sun_icon.svg",
+    icon: "/weather_logo.svg",
   },
 };
 
