@@ -10,7 +10,11 @@ export default function Search() {
 
   function handleSearchCity(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    router.push(`/search/${cityName}`);
+
+    const name = cityName.trim();
+    if (!name) return;
+
+    router.push(`/search/${name}`);
     setCityName("");
   }
 
